@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- creation of my table -->
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email Address</th>
+                <th>Contact #</th>
+            </tr>
+        </thead>
+    </table>
+    <!-- end of table -->
+
+    <h1> Add User</h1>
+    <hr>
+    <form>
+        <label for="first_name">First Name: 
+            <input type="text" name="first_name" id="fn">
+        </label>
+        <label for="last_name">Last Name: 
+            <input type="text" name="last_name" id="ln">
+        </label>
+        <label for="email">Email:
+            <input type="text" name='email' id="e">
+        </label>
+        <label for="contact">Phone:
+                <input type="text" name='contact' id="c">
+            </label>
+
+        <input type='submit' value="Add user">
+    </form>
+
+    <script>
+        $('form').submit(function() {
+
+            $('thead').append('<tr><td>' + $(this).children().children('#fn').val() + '</td>' +
+                '<td>' + $(this).children().children('#ln').val() + '</td><td>' +
+                $(this).children().children('#e').val() + '</td><td>' + $(this).children().children('#c').val() +
+                '</td></tr>');
+
+            return false;
+        });
+    </script>
+</body>
+
+</html>
