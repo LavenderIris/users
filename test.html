@@ -27,25 +27,26 @@
     <hr>
     <form>
         <label for="first_name">First Name: 
-            <input type="text" placeholder="First name" name="first_name" id="fn">
+            <input type="text" name="first_name" id="fn">
         </label>
         <label for="last_name">Last Name: 
-            <input type="text" placeholder="Last name" name="last_name" id="ln">
+            <input type="text" name="last_name" id="ln">
         </label>
         <label for="email">Email:
-            <input type="text" placeholder="email" name='email' id="e">
+            <input type="text" name='email' id="e">
         </label>
         <label for="contact">Phone:
-            <input type="text" placeholder="contact" name='contact' id="c">
+            <input type="text" name='contact' id="c">
         </label>
-
-        <input type='submit' value="Add user">
+        <input id="submit" type='submit' value="Add user">
     </form>
 
     <script>
-        $('form').submit(function() {
-
-            $('thead').append('<tr><td>' + $(this).children().children('#fn').val() + '</td>' +
+        $('#submit').click(function() {
+            console.log('sdffd', $(this).children().val());
+            console.log($(this).children());
+            console.log('this', $(this).children('input').val());
+            $('thead').append('<tr><td>' + $(this).children('input[name="last_name"]').val() + '</td>' +
                 '<td>' + $(this).children().children('#ln').val() + '</td><td>' +
                 $(this).children().children('#e').val() + '</td><td>' + $(this).children().children('#c').val() +
                 '</td></tr>');
